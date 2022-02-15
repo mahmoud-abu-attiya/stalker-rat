@@ -4,11 +4,15 @@
   margin:0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
 }
 body {
   margin: 0;
-  font-family: "Varela Round", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:white;
+}
+a{
+  color:white;
+  text-decoration: none;
 }

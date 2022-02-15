@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Navbar.scss";
 import logo from "../../images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
+import imageProfile from "../../images/profile.jpg";
+import SearchBox from "./SearchBox";
 
 export default class Navbar extends Component {
   render() {
@@ -16,25 +18,22 @@ export default class Navbar extends Component {
               </h2>
             </div>
           </a>
-          <div className="search-form">
-            <div className="field">
-              <input type="search" required autoComplete="off" id="search"></input>
-              <label htmlFor="search" title="Search"></label>
+          <SearchBox clacc="searchBox" />
+          <div className="btns-pro">
+            <div className="nav-btns">
+              <a href="/signin">
+                <button className="sign">sign in</button>
+              </a>
+              <a href="/signin">
+                <button className="log">log in</button>
+              </a>
             </div>
-            <button id="submit" autoComplete="off" onClick={this.expand_search}>
-              <i className="fa fa-search"></i>
-            </button>
-          </div>
-          <div className="nav-btns">
-            <a href="/signin">
-              <button className="sign">sign in</button>
+            <a href="/" className="profile-part">
+              <div>name</div>
+              <div className="profile">
+                <img src={imageProfile} alt="profile"></img>
+              </div>
             </a>
-            <a href="/signin">
-              <button className="log">log in</button>
-            </a>
-          </div>
-          <div className="profile">
-            <img src="/" alt="profile"></img>
           </div>
         </div>
       </nav>

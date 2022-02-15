@@ -1,4 +1,4 @@
-$primarycolor: #11c3c1;
+@import "../../styles/varibales";
 
 nav {
   position: relative;
@@ -6,14 +6,13 @@ nav {
   text-align: center;
   border-bottom: 1px solid $primarycolor;
   background-color: #000;
-  .container{
+  .container {
     display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
-  max-width: 1800px;
-  margin:auto;
-  align-items: center;
+    grid-template-columns: 2fr 3fr 2fr;
+    max-width: 1800px;
+    margin: auto;
+    align-items: center;
     a {
-      text-decoration: none;
       .logo {
         display: flex;
         align-items: center;
@@ -37,6 +36,64 @@ nav {
       align-items: center;
       height: 50%;
       transition: 0.5s;
+      .suggestions {
+        position: absolute;
+        top: -12px;
+        right: -3%;
+        background-color: #000;
+        padding: 20px;
+        padding-top: 70px;
+        z-index: 4;
+        border-radius: 30px;
+        box-shadow: 0px 0px 16px -2px $primarycolor;
+        border: solid 1px #11c3c16b;
+        width: 106%;
+        height: 355px;
+
+        .search-list {
+          overflow-y: auto;
+          height: 100%;
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
+          &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: #11c3c04d;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #11c3c096;
+          }
+          :first-child > div {
+            border-top: none !important;
+          }
+          a {
+            .search-result {
+              border-top: solid 2px #9e9e9e2e;
+              display: flex;
+              align-items: center;
+              padding: 10px 15px;
+              height: 80px;
+              width: 95%;
+              border-radius: 5px;
+              transition: 0.3s;
+              &:hover {
+                background-color: #11c3c126;
+                cursor: pointer;
+              }
+              img {
+                height: 90%;
+                border-radius: 50%;
+              }
+              div {
+                font-size: 18px;
+                margin-left: 15px;
+                font-weight: bolder;
+              }
+            }
+          }
+        }
+      }
       #submit {
         position: absolute;
         right: 1%;
@@ -47,78 +104,61 @@ nav {
         background-color: transparent;
         border: none;
         transition: 0.5s;
+        z-index: 5;
       }
     }
-    .nav-btns {
+    .btns-pro {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .nav-btns {
+        display: none;
+        a {
+          button {
+            background-color: #11c3c1;
+            padding: 0px 20px;
+            min-width: 23%;
+            height: 30px;
+            font-size: clamp(10px, 1vw, 16px);
+            border-radius: 15px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+          }
+          .sign {
+            background-color: $primarycolor;
+            color: #000;
+          }
+          .log {
+            color: $primarycolor;
+            border: solid 2px $primarycolor;
+            background-color: transparent;
+            margin-left: 5%;
+          }
+        }
+      }
       a {
-        button {
-          background-color: #11c3c1;
-          padding: 0px 20px;
-          min-width: 23%;
-          height: 30px;
-          font-size: clamp(10px, 1vw, 16px);
-          border-radius: 15px;
-          outline: none;
-          border: none;
-          cursor: pointer;
+        display: flex;
+        align-items: center;
+        div {
+          font-size: 18px;
+          text-transform: capitalize;
+          font-weight: bold;
         }
-        .sign{
-          background-color: $primarycolor;
-          color: #000;
-        }
-        .log{
-          color: $primarycolor;
-          border: solid 2px $primarycolor;
-          background-color: transparent;
-          margin-left: 5%;
+        .profile {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-left: 10px;
+          img {
+            width: 100%;
+          }
         }
       }
     }
   }
 }
-
-//    placeholder animation   //
-
-.label-before {
-  color: $primarycolor;
-  line-height: 20px;
-  font-size: 12px;
-  top: -10px;
-  background-color: #000;
-  padding: 0 4px;
-  left: 9px;
-  // z-index: -1;
-}
-
-.field {
-  height: 100%;
-  width: 100%;
-  label::before {
-    content: attr(title);
-    position: absolute;
-    top: 0;
-    left: 20px;
-    line-height: 40px;
-    color: $primarycolor;
-    transition: 300ms all;
-  }
-  input {
-    width: 100%;
-    background-color: transparent;
-    outline: none;
-    border: 2px solid $primarycolor;
-    border-radius: 20px;
-    height: 100%;
-    padding-left: 20px;
-    padding-right: 55px;
-    transition: 0.5s;
-    color: #fff;
-    &:valid + label::before {
-      @extend .label-before;
-      content: attr(data-title);
-    }
-    &:focus + label::before {
-      @extend .label-before;
-    }
-  }
-}
+@import "searchInput";
