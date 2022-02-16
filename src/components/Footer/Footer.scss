@@ -1,0 +1,28 @@
+footer{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 0;
+    border-top: 2px solid #000;
+    font-size: 11px;
+    .cr, .fo-links{
+        text-align: center;
+        strong{
+            color:#000;
+            text-decoration: underline;
+        }
+    }
+    .fo-links{
+        :first-child{
+            margin-right: 25px;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+}

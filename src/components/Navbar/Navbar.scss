@@ -3,6 +3,7 @@
 nav {
   position: relative;
   height: 80px;
+  color:white;
   text-align: center;
   border-bottom: 1px solid $primarycolor;
   background-color: #000;
@@ -32,7 +33,7 @@ nav {
         }
         h2 {
           @media (max-width:767px) {
-            font-size: clamp(16px, 1.5vw, 20px);
+            font-size: clamp(15px, 2vw, 20px);
           }
           span {
             color: $primarycolor;
@@ -89,6 +90,7 @@ nav {
               width: 95%;
               border-radius: 5px;
               transition: 0.3s;
+              color:#fff;
               &:hover {
                 background-color: #11c3c126;
                 cursor: pointer;
@@ -142,7 +144,8 @@ nav {
       align-items: center;
       
       .nav-btns {
-        display: none;
+        // display: none;
+        display: flex;
         a {
           button {
             background-color: #11c3c1;
@@ -153,7 +156,11 @@ nav {
             border-radius: 15px;
             outline: none;
             border: none;
+            white-space: nowrap;
             cursor: pointer;
+            @media (max-width:767px) {
+              padding: 0px 15px;
+            }
           }
           .sign {
             background-color: $primarycolor;
@@ -167,9 +174,11 @@ nav {
           }
         }
       }
-      a {
+      .profile-part {
+        color:#fff;
         display: flex;
         align-items: center;
+        display: none;
         div {
           font-size: 18px;
           text-transform: capitalize;
@@ -178,6 +187,7 @@ nav {
             font-size: clamp(14px, 1.5vw, 20px);
           }
         }
+        
         .profile {
           width: 60px;
           height: 60px;

@@ -1,18 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import "varibales.scss";
 
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Varela Round", sans-serif;
 }
-body {
+html{
+  background-image: linear-gradient(#0c7d91e5, rgba(83, 144, 148, 0.493)),
+    url("../images/body-bg.jpg");
+  }
+  body {
+    position: relative;
+  min-height: 100vh;
+  // min-height: 90vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:white;
+  color: black;
 }
-a{
-  color:white;
+a {
   text-decoration: none;
 }

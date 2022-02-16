@@ -1,0 +1,55 @@
+@import "../../styles/varibales";
+header{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10vh;
+        gap:10vh;
+    .logo-header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+        img{
+            width: 15%;
+            max-width: 200px;
+            min-width: 100px;
+        }
+        h1{
+            font-size: clamp(35px, 6vw, 75px);
+            color:black;
+            align-self: end;
+            span{
+                color:#8BE3E3;
+            }
+        }
+    }
+    .btns{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom:100px;
+        a{
+            button{
+                width: 50vw;
+                max-width: 600px;
+                min-width: 300px;
+                height: 50px;
+                border-radius: 25px;
+                border:2px solid $primarycolor;
+                color:$primarycolor;
+                background-color: #000;
+                margin-top: 20px;
+                font-weight: bold;
+                font-size: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover{
+                    background-color: #002727;
+                }
+            }
+        }
+    }
+}
