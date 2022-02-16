@@ -6,12 +6,16 @@ nav {
   text-align: center;
   border-bottom: 1px solid $primarycolor;
   background-color: #000;
-  .container {
+  .nav-container {
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
     max-width: 1800px;
+    height: 100%;
     margin: auto;
     align-items: center;
+    @media (max-width: 767px) {
+      grid-template-columns: 2fr 1fr 2fr;
+    }
     a {
       .logo {
         display: flex;
@@ -22,8 +26,14 @@ nav {
         text-transform: none;
         img {
           height: 70%;
+          @media (max-width:767px) {
+            height: 57%;
+          }
         }
         h2 {
+          @media (max-width:767px) {
+            font-size: clamp(16px, 1.5vw, 20px);
+          }
           span {
             color: $primarycolor;
           }
@@ -33,6 +43,7 @@ nav {
     .search-form {
       position: relative;
       display: flex;
+      justify-content: center;
       align-items: center;
       height: 50%;
       transition: 0.5s;
@@ -48,8 +59,9 @@ nav {
         box-shadow: 0px 0px 16px -2px $primarycolor;
         border: solid 1px #11c3c16b;
         width: 106%;
-        height: 355px;
-
+        height: 0px;
+        opacity: 0;
+        transition: all 0.5s;
         .search-list {
           overflow-y: auto;
           height: 100%;
@@ -94,6 +106,14 @@ nav {
           }
         }
       }
+
+      /////// suggestion animation//////
+      .open-sugg {
+        opacity: 1;
+        height: 50vh;
+      }
+      /////// suggestion animation//////
+
       #submit {
         position: absolute;
         right: 1%;
@@ -105,6 +125,13 @@ nav {
         border: none;
         transition: 0.5s;
         z-index: 5;
+        @media (max-width:767px) {
+          
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
     .btns-pro {
@@ -113,6 +140,7 @@ nav {
       display: flex;
       justify-content: center;
       align-items: center;
+      
       .nav-btns {
         display: none;
         a {
@@ -146,6 +174,9 @@ nav {
           font-size: 18px;
           text-transform: capitalize;
           font-weight: bold;
+          @media (max-width:767px) {
+            font-size: clamp(14px, 1.5vw, 20px);
+          }
         }
         .profile {
           width: 60px;
@@ -153,6 +184,11 @@ nav {
           border-radius: 50%;
           overflow: hidden;
           margin-left: 10px;
+          @media (max-width:767px) {
+            width: 40px;
+            height: 40px;
+          }
+
           img {
             width: 100%;
           }
@@ -161,4 +197,5 @@ nav {
     }
   }
 }
+
 @import "searchInput";

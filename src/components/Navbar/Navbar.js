@@ -9,8 +9,8 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav>
-        <div className="container">
-          <a href="/">
+        <div className="nav-container">
+          <a href="/" id="logo">
             <div className="logo">
               <img src={logo} alt="stalker-rat logo"></img>
               <h2>
@@ -18,7 +18,7 @@ export default class Navbar extends Component {
               </h2>
             </div>
           </a>
-          <SearchBox clacc="searchBox" />
+          <SearchBox />
           <div className="btns-pro">
             <div className="nav-btns">
               <a href="/signin">
