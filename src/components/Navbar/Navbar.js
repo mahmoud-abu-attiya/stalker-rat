@@ -21,10 +21,10 @@ export default class Navbar extends Component {
           <SearchBox />
           <div className="btns-pro">
             <div className="nav-btns">
-              <a href="/signin">
-                <button className="sign">sign in</button>
+              <a href="/signup">
+                <button className="sign">sign up</button>
               </a>
-              <a href="/signin">
+              <a href="/login">
                 <button className="log">log in</button>
               </a>
             </div>

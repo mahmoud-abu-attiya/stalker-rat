@@ -31,7 +31,7 @@ export default class SearchBox extends Component {
       let logo = document.getElementById("logo");
       let btnsAndProfile = document.querySelector(".btns-pro");
       let navContainer = document.querySelector(".nav-container");
-      if (inp.offsetHeight == inp.offsetWidth) {
+      if (inp.offsetHeight === inp.offsetWidth) {
         inp.focus();
         searchBtn.style.left = "94%";
         inpFoucs();

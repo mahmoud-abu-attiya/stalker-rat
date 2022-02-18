@@ -14,8 +14,8 @@ export default class LandingPage extends Component {
             <div className='users-count'>
             Join 98 users and sign up
             </div>
-              <a href='/'><button>sign up</button></a>
-              <a href='/'><button>log in</button></a>
+              <a href='/signup'><button>sign up</button></a>
+              <a href='/login'><button>log in</button></a>
           </div>
       </header>
     )

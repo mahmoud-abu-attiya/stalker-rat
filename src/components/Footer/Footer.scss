@@ -1,15 +1,11 @@
 footer{
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%);
-    width: 90%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 20px 0;
+    margin-top: 100px;
     border-top: 2px solid #000;
-    font-size: 11px;
+    font-size: clamp(10px, 1.5vw, 15px);
     .cr, .fo-links{
         text-align: center;
         strong{
@@ -23,6 +19,7 @@ footer{
         }
         a{
             text-decoration: underline;
+            color: #000;
         }
     }
 }
