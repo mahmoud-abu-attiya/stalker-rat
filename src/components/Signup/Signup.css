@@ -1,0 +1,17 @@
+img {
+    pointer-events: none;
+}
+.animate{
+    transition: 0.3s;
+}
+.hidden{
+    opacity: 0;
+}
+.step-two{
+    -webkit-transform: translateX(-33.3%);
+    transform: translateX(-33.3%);
+}
+.step-three{
+    -webkit-transform: translateX(-66.6%);
+    transform: translateX(-66.6%);
+}

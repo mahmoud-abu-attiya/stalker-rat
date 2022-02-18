@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import LandingPage from './components/LandingPage/LandingPage';
 import Footer from "./components/Footer/Footer";
 import Login from './components/Login/Login';
-import Signup from './components/Signup/Signup';
+import SignUp from './components/Signup/Signup';
 import { BrowserRouter as Router, Swich, Route, Routes } from 'react-router-dom';
 
 export default class App extends Component {
@@ -18,7 +18,7 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<LandingPage/>} />
             <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
+            <Route path='/signup' element={<SignUp />} />
           </Routes>
           <Footer />
         </div>
