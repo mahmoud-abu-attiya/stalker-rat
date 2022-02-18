@@ -9,9 +9,10 @@ import {
 	InputField,
 	Eye,
 	Next,
+	NextSVG,
 } from "./styled";
-import arrow from "../images/arrow.svg";
-import right from "../images/right.svg";
+import arrow from "../../images/arrow.svg";
+import right from "../../images/right.svg";
 import "./Signup.css";
 import "font-awesome/css/font-awesome.min.css";
 // import "./Signup.scss"
@@ -21,24 +22,24 @@ export default class Form extends Component {
 		super(props);
 		this.state = {
 			first_message: "What's your name?",
-			second_message: "",
-			third_message: "",
-			first_name: "",
-			last_name: "",
-			username: "",
-			email: "",
-			password: "",
-			confirm: "",
+			second_message: '',
+			third_message: '',
+			first_name: '',
+			last_name: '',
+			username: '',
+			email: '',
+			password: '',
+			confirm: '',
 			first_name_error: false,
 			last_name_error: false,
 			username_error: false,
 			email_error: false,
 			password_error: false,
 			confirm_error: false,
-			type1: "password",
-			type2: "password",
-			button: "Next",
-			icon: arrow,
+			type1: 'password',
+			type2: 'password',
+			button: 'Next',
+			icon: arrow
 		};
 	}
 
@@ -342,7 +343,7 @@ export default class Form extends Component {
 					<Step className="animate hidden" id="step-three">
 						<Message>Last Step! Enter a strong password 🔐</Message>
 						<InputContainer>
-						
+
 							<InputWrapper full className="form-floating">
 								<InputField
 									className="form-control"
@@ -381,11 +382,11 @@ export default class Form extends Component {
 					</Step>
 				</Steps>
 				<Next back className="hidden animate" id="back">
-					<img src={arrow} alt="arrows" />
+					<NextSVG src={arrow} alt="arrows" />
 				</Next>
 				<Next id="next">
 					{this.state.button}
-					<img src={this.state.icon} alt="arrows" />
+					<NextSVG src={this.state.icon} alt="arrows" />
 				</Next>
 			</FormContainer>
 		);

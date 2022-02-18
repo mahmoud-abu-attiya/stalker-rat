@@ -26,7 +26,7 @@ export default class SearchBox extends Component {
       inp.style.color = ""
     };
     const openSearchBox = () => {
-      let searchBtn = document.getElementById("submit");
+      let searchBtn = document.getElementById("searchIcon");
       let inp = document.getElementById("search");
       let logo = document.getElementById("logo");
       let btnsAndProfile = document.querySelector(".btns-pro");
@@ -46,7 +46,7 @@ export default class SearchBox extends Component {
     const inpBlur = () => {
       let sugg = document.querySelector(".suggestions");
       let overlay = document.querySelector(".overlay");
-      let searchBtn = document.getElementById("submit");
+      let searchBtn = document.getElementById("searchIcon");
       let inp = document.getElementById("search");
       let logo = document.getElementById("logo");
       let btnsAndProfile = document.querySelector(".btns-pro");
@@ -80,7 +80,7 @@ export default class SearchBox extends Component {
           ></input>
           <label htmlFor="search" title="Search"></label>
         </div>
-        <button id="submit" autoComplete="off" onClick={openSearchBox}>
+        <button id="searchIcon" autoComplete="off" onClick={openSearchBox}>
           <i className="fa fa-search"></i>
         </button>
         <div className="suggestions">
