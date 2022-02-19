@@ -7,7 +7,7 @@ import './Signup.css'
 export default class SignUp extends Component {
     render() {
         return (
-        <Container className='container'>
+        <Container className='form-container'>
             <Logosvg src={icon} alt='signup' />
             <Form />
         </Container>

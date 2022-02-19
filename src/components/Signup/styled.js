@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const container = styled.div`
-overflow:hidden;
+
 display: flex;
 justify-content: space-between;
 min-height: 500px;
@@ -63,7 +63,7 @@ border-radius: 15px;
 
 padding: 0 12px;
 outline: none;
-height: 45px;
+
 color: white;
 font-size: 16px;
 transition:0.3s;
@@ -74,12 +74,7 @@ transition:0.3s;
     box-shadow: 0px 0px 15px 0px cyan;
 }
 
-::placeholder{
-    color: white;
-    opacity: 0.7;
-    font-size: 16px;
 
-}
 
 
 `
@@ -96,9 +91,9 @@ font-size: 20px
 
 export const Message = styled.span`
 
-font-size: 22px;
 
-font-size:clamp(19px, 1.5vw, 22px)
+
+font-size:clamp(17px, 1.5vw, 22px)
 `
 export const NextSVG = styled.img`
 margin-left:10px;

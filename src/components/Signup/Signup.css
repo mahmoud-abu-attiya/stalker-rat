@@ -1,3 +1,7 @@
+.form-container{
+    width: 85%;
+    margin:auto;
+}
 img {
     pointer-events: none;
 }
@@ -14,4 +18,9 @@ img {
 .step-three{
     -webkit-transform: translateX(-66.6%);
     transform: translateX(-66.6%);
+}
+@media (max-width:767px) {
+    .form-container{
+        width: 90%;
+    }
 }
