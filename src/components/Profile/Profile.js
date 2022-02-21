@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ProfileImg from "../../images/profile.jpg";
 import "./Profile.scss";
 import ShareImg from "../../images/share.gif";
+import Share from "./Share/Share";
 
 export default class Profile extends Component {
   render() {
@@ -40,9 +41,13 @@ export default class Profile extends Component {
       parts.style.transform = "translate(-75%)";
       sendpart.classList.add("active");
     };
+    const shareIcons = ()=>{
+      document.querySelector(".share-modern").style.display = ""
+    }
 
     return (
       <div className="profile">
+        <Share />
         <div className="cover">
           <div className="container">
             <div className="info">
@@ -57,7 +62,7 @@ export default class Profile extends Component {
               <p className="link">
                 https://lottiefiles.com/33940-like-comment-and-share
               </p>
-              <button>
+              <button onClick={shareIcons}>
                 <img src={ShareImg} alt="share link"></img>
               </button>
             </div>
@@ -93,15 +98,15 @@ export default class Profile extends Component {
                   <div className="logo">
                     <span>S</span>talker <span>R</span>at
                   </div>
-                    <div className="shr-fav">
-                      <button>
-                        <i className="far fa-star"></i>
-                        <i className="fas fa-star"></i>
-                      </button>
-                      <button>
-                        <i className="fas fa-share-alt-square"></i>
-                      </button>
-                    </div>
+                  <div className="shr-fav">
+                    <button>
+                      <i className="far fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </button>
+                    <button>
+                      <i className="fas fa-share-alt-square"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
