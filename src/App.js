@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import SignUp from './components/Signup/Signup';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Loading from './components/Loading/Loading';
+import Profile from './components/Profile/Profile';
 
 export default class App extends Component {
   render() {
@@ -21,6 +22,7 @@ export default class App extends Component {
             <Route path="/" element={<LandingPage/>} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/profile' element={<Profile />} />
           </Routes>
           <Footer />
         </div>

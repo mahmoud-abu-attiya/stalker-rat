@@ -25,6 +25,7 @@ export const FormContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 50%;
+overflow: hidden;
 @media (max-width:767px){
     width: 100%;
 }
@@ -42,7 +43,7 @@ width:40vw;
 max-width:500px;
 justify-content: center;
 @media (max-width:767px){
-    width: 90vw;
+    width: 86vw;
 }
 `
 
