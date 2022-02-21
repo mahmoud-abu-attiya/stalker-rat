@@ -7,17 +7,18 @@ export default class SearchBox extends Component {
     person: [],
   };
 
-  render() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((res) => {
-        this.setState({ person: res.data });
-      })
+  componentDidMount() {
+    axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+      // console.log(res.data);
+      this.setState({ person: res.data })
+    })
       .catch((err) => {
         console.log(err);
       });
-
+  }
+  render() {
     const inpFoucs = () => {
+      console.log(this.state.person);
       let inp = document.getElementById("search");
       let sugg = document.querySelector(".suggestions");
       let overlay = document.querySelector(".overlay");
@@ -88,7 +89,7 @@ export default class SearchBox extends Component {
           <div className="search-list">
             {this.state.person.map((valu) => {
               return (
-                <a href="/profile">
+                <a href="/profile" key={valu.id}>
                   <div className="search-result">
                     <img src={imageProfile} alt="user pic"></img>
                     <div>{valu.name}</div>

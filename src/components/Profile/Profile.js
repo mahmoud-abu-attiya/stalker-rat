@@ -96,7 +96,7 @@ export default class Profile extends Component {
                     <div className="shr-fav">
                       <button>
                         <i className="far fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
                       </button>
                       <button>
                         <i className="fas fa-share-alt-square"></i>
