@@ -3,6 +3,7 @@ import ProfileImg from "../../images/profile.jpg";
 import "./Profile.scss";
 import ShareImg from "../../images/share.gif";
 import Share from "./Share/Share";
+import NewMess from "./NewMess/NewMess";
 
 export default class Profile extends Component {
   render() {
@@ -41,9 +42,10 @@ export default class Profile extends Component {
       parts.style.transform = "translate(-75%)";
       sendpart.classList.add("active");
     };
-    const shareIcons = ()=>{
-      document.querySelector(".share-modern").style.display = ""
-    }
+    const shareIcons = () => {
+      document.querySelector(".share-modern").style.display = "";
+    };
+    // console.log(document.querySelector(".part"))
 
     return (
       <div className="profile">
@@ -71,16 +73,24 @@ export default class Profile extends Component {
         <div className="container">
           <ul className="row">
             <li className="col-3">
-              <button onClick={messAnime}>Messages</button>
+              <button onClick={messAnime}>
+                Messages <span>12</span>
+              </button>
             </li>
             <li className="col-3">
-              <button onClick={newAnime}>New</button>
+              <button onClick={newAnime}>
+                New <span>13</span>
+              </button>
             </li>
             <li className="col-3">
-              <button onClick={favAnime}>Favorite</button>
+              <button onClick={favAnime}>
+                Favorite <span>14</span>
+              </button>
             </li>
             <li className="col-3">
-              <button onClick={sendAnime}>Send</button>
+              <button onClick={sendAnime}>
+                Send <span>19</span>
+              </button>
             </li>
           </ul>
           <div className="parts">
@@ -112,15 +122,7 @@ export default class Profile extends Component {
             </section>
             <section className="massages-new part">
               <h1>new</h1>
-              <div className="message">
-                <p className="message-content">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Accusantium maxime iure tempora molestiae repellat molestias
-                  in, deserunt a voluptas dolorem nostrum amet. Assumenda
-                  ratione quasi dolorem? Sit animi aperiam minus!
-                </p>
-                <div className="mes-date">2/2/2222 2:22AM</div>
-              </div>
+              <NewMess />
             </section>
             <section className="massages-fav part">
               <h1>Favorite</h1>
@@ -131,19 +133,42 @@ export default class Profile extends Component {
                   in, deserunt a voluptas dolorem nostrum amet. Assumenda
                   ratione quasi dolorem? Sit animi aperiam minus!
                 </p>
-                <div className="mes-date">2/2/2222 2:22AM</div>
+                <div className="mes-details">
+                  <div className="mes-date">2/2/2222 2:22AM</div>
+                  <div className="logo">
+                    <span>S</span>talker <span>R</span>at
+                  </div>
+                  <div className="shr-fav">
+                    <button>
+                      <i className="far fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </button>
+                    <button>
+                      <i className="fas fa-share-alt-square"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </section>
             <section className="massages-send part">
               <h1>send</h1>
               <div className="message">
                 <p className="message-content">
+                  <div className="send-to">
+                    you send this message to Ahmed :
+                  </div>
+                  <br />
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Accusantium maxime iure tempora molestiae repellat molestias
                   in, deserunt a voluptas dolorem nostrum amet. Assumenda
                   ratione quasi dolorem? Sit animi aperiam minus!
                 </p>
-                <div className="mes-date">2/2/2222 2:22AM</div>
+                <div className="mes-details">
+                  <div className="mes-date">2/2/2222 2:22AM</div>
+                  <div className="logo">
+                    <span>S</span>talker <span>R</span>at
+                  </div>
+                </div>
               </div>
             </section>
           </div>
