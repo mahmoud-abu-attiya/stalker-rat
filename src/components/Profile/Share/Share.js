@@ -23,7 +23,7 @@ export default class Share extends Component {
 
     if (window.innerWidth < 767) {
       this.state.iconSize = 40
-      console.log(this.state.iconSize);
+      // console.log(this.state.iconSize);
     }
     const hidden = (e)=>{
       let shareModern = document.querySelector(".share-modern")

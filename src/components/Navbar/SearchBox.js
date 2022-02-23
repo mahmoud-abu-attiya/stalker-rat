@@ -18,7 +18,7 @@ export default class SearchBox extends Component {
   }
   render() {
     const inpFoucs = () => {
-      console.log(this.state.person);
+      // console.log(this.state.person);
       let inp = document.getElementById("search");
       let sugg = document.querySelector(".suggestions");
       let overlay = document.querySelector(".overlay");

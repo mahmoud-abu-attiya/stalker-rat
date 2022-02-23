@@ -9,7 +9,7 @@ export default class NewMess extends Component {
     return (
       <>
       <div className="message">
-        <div className="plh" onClick={Open} />
+        <div className="plh" onClick={Open}></div>
         <div className="noti">new</div>
         <p className="message-content">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -34,7 +34,7 @@ export default class NewMess extends Component {
         </div>
       </div>
       <div className="message">
-        <div className="plh" onClick={Open} />
+        <div className="plh" onClick={Open}></div>
         <div className="noti">new</div>
         <p className="message-content">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
