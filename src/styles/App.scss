@@ -1,0 +1,8 @@
+/* Change the white to any color */
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:active {box-shadow: 0 0 0 33px #000 inset !important;}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {-webkit-text-fill-color: #fff !important;}

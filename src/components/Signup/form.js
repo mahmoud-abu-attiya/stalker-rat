@@ -50,6 +50,8 @@ export default class Form extends Component {
 
 	// functions to update the state while writing
 	updateFirstName = (e) => {
+		e.target.classList.remove('is-invalid')
+		e.target.classList.add('is-valid')
 		this.setState({
 			...this.state,
 			first_name: e.target.value,
@@ -58,6 +60,8 @@ export default class Form extends Component {
 		});
 	};
 	updateLastName = (e) => {
+		e.target.classList.remove('is-invalid')
+		e.target.classList.add('is-valid')
 		this.setState({
 			...this.state,
 			last_name: e.target.value,
@@ -71,12 +75,15 @@ export default class Form extends Component {
 			e.target.value
 		);
 		if (response.ok) {
+			e.target.classList.remove('is-invalid')
+			e.target.classList.add('is-valid')
 			this.setState({
 				...this.state,
 				email_error: false,
 				second_message: `Thank you, this email is valid.`,
 			});
 		} else {
+			e.target.classList.add('is-invalid')
 			const data = await response.json();
 			this.setState({
 				...this.state,
@@ -92,12 +99,15 @@ export default class Form extends Component {
 			e.target.value
 		);
 		if (response.ok) {
+			e.target.classList.remove('is-invalid')
+			e.target.classList.add('is-valid')
 			this.setState({
 				...this.state,
 				username_error: false,
 				second_message: `Yaay ! you found a username. 🎉`,
 			});
 		} else {
+			e.target.classList.add('is-invalid')
 			const data = await response.json();
 			this.setState({
 				...this.state,
@@ -130,6 +140,7 @@ export default class Form extends Component {
 		);
 		let will_return = false;
 		if (last_inp.value === "") {
+			last_inp.classList.add('is-invalid')
 			this.setState({ ...this.state, last_name_error: true });
 			will_return = true;
 			setTimeout(() => {
@@ -139,6 +150,7 @@ export default class Form extends Component {
 			this.setState({ ...this.state, last_name_error: false });
 		}
 		if (first_inp.value === "") {
+			first_inp.classList.add('is-invalid')
 			this.setState({ ...this.state, first_name_error: true });
 			will_return = true;
 			setTimeout(() => {
@@ -194,18 +206,26 @@ export default class Form extends Component {
 		);
 		let will_return = false;
 		if (email_inp.value === "") {
+
+			email_inp.classList.add('is-invalid')
+			// email_inp.classList.remove('is-valid')
 			this.setState({ ...this.state, email_error: true });
 			email_inp.focus();
 			will_return = true;
 		} else {
 			this.setState({ ...this.state, email_error: false });
+			email_inp.classList.remove('is-invalid')
+			email_inp.classList.add('is-valid')
 		}
 		if (username_inp.value === "") {
+			username_inp.classList.add('is-invalid')
 			this.setState({ ...this.state, username_error: true });
 			username_inp.focus();
 			will_return = true;
 		} else {
 			this.setState({ ...this.state, username_error: false });
+			username_inp.classList.remove('is-invalid')
+			username_inp.classList.add('is-valid')
 		}
 		if (will_return) {
 			this.setState({
