@@ -4,8 +4,41 @@ import "./Profile.scss";
 import ShareImg from "../../images/share.gif";
 import Share from "./Share/Share";
 import NewMess from "./NewMess/NewMess";
+import Message from "./Message/Message";
+import html2canvas from "html2canvas";
 
 export default class Profile extends Component {
+  shareScreenshot = (e) => {
+    const dataURItoBlob = (dataURI) => {
+      var byteString = atob(dataURI.split(",")[1]);
+      var mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
+      var ab = new ArrayBuffer(byteString.length);
+      var ia = new Uint8Array(ab);
+      for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      return new Blob([ab], { type: mimeString });
+    };
+    let mass = e.target.parentElement.parentElement.parentElement.parentElement;
+    html2canvas(mass, {
+      allowTaint: true,
+      useCORS: true,
+    })
+      .then(function (canvas) {
+        let image = canvas.toDataURL("image/png", 0.5);
+        image = dataURItoBlob(image);
+        image = new File([image], "screenshot.png", { type: "image/png" });
+        console.log("done");
+        navigator.share({
+          title: "screenshot",
+          files: [image],
+          text: "hhhhhhhhh",
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
   render() {
     const allparts = () => {
       document.querySelectorAll(".part").forEach((part) => {
@@ -45,8 +78,6 @@ export default class Profile extends Component {
     const shareIcons = () => {
       document.querySelector(".share-modern").style.display = "";
     };
-    // console.log(document.querySelector(".part"))
-
     return (
       <div className="profile">
         <Share />
@@ -96,33 +127,11 @@ export default class Profile extends Component {
           <div className="parts">
             <section className="massages part active">
               <h1>massages</h1>
-              <div className="message">
-                <p className="message-content">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Accusantium maxime iure tempora molestiae repellat molestias
-                  in, deserunt a voluptas dolorem nostrum amet. Assumenda
-                  ratione quasi dolorem? Sit animi aperiam minus!
-                </p>
-                <div className="mes-details">
-                  <div className="mes-date">2/2/2222 2:22AM</div>
-                  <div className="logo">
-                    <span>S</span>talker <span>R</span>at
-                  </div>
-                  <div className="shr-fav">
-                    <button>
-                      <i className="far fa-star"></i>
-                      <i className="fas fa-star"></i>
-                    </button>
-                    <button>
-                      <i className="fas fa-share-alt-square"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <Message ShareFunction={this.shareScreenshot} />
             </section>
             <section className="massages-new part">
               <h1>new</h1>
-              <NewMess />
+              <NewMess ShareFunction={this.shareScreenshot} />
             </section>
             <section className="massages-fav part">
               <h1>Favorite</h1>

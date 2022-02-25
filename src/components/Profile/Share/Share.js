@@ -31,7 +31,6 @@ export default class Share extends Component {
       if(e.target !== shareContainer){
         shareModern.style.display = "none"
       }
-   
     }
     return (
       <div className="share-modern" onClick={hidden} style={{display:"none"}}>
