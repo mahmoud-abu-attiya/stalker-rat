@@ -9,6 +9,8 @@ import Login from './components/Login/Login';
 import SignUp from './components/Signup/Signup';
 import Loading from './components/Loading/Loading';
 import Profile from './components/Profile/Profile';
+import SendMessage from './components/SendMessage/SendMessage';
+import EditProfile from './components/EditProfile/EditProfile';
 
 export default class App extends Component {
   render() {
@@ -23,6 +25,8 @@ export default class App extends Component {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/send-message' element={<SendMessage />} />
+            <Route path='/edit-profile' element={<EditProfile />} />
           </Routes>
           <Footer />
         </div>

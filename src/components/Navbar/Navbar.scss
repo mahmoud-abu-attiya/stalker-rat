@@ -144,8 +144,8 @@ nav {
       align-items: center;
       
       .nav-btns {
-        // display: none;
-        display: flex;
+        display: none;
+        // display: flex;
         a {
           button {
             background-color: #11c3c1;
@@ -178,7 +178,7 @@ nav {
         color:#fff;
         display: flex;
         align-items: center;
-        display: none;
+        // display: none;
         div {
           font-size: 18px;
           text-transform: capitalize;

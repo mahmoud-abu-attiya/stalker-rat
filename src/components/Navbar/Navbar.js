@@ -10,7 +10,7 @@ export default class Navbar extends Component {
     return (
       <nav>
         <div className="nav-container">
-          <a href="/" id="logo">
+          <a href="/profile" id="logo">
             <div className="logo">
               <img src={logo} alt="stalker-rat logo"></img>
               <h2>
@@ -28,7 +28,7 @@ export default class Navbar extends Component {
                 <button className="log">log in</button>
               </a>
             </div>
-            <a href="/" className="profile-part">
+            <a href="/edit-profile" className="profile-part">
               <div>name</div>
               <div className="profile">
                 <img src={imageProfile} alt="profile"></img>
