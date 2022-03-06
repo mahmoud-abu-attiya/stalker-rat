@@ -1,5 +1,5 @@
 @import "../../styles/varibales";
-.edit-profile{
+.edit-profile {
   .cover {
     position: relative;
     width: 100%;
@@ -9,7 +9,7 @@
     border-bottom: 10px solid #000;
     box-shadow: 0px 10px 30px 5px;
     margin-bottom: 100px;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       height: 150px;
       margin-bottom: 50px;
     }
@@ -19,9 +19,9 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      @media (max-width:767px) {
-        gap:10px;
-        top:50%;
+      @media (max-width: 767px) {
+        gap: 10px;
+        top: 50%;
       }
       .profile-image {
         border: 10px solid #000;
@@ -29,16 +29,32 @@
         border-radius: 50%;
         box-shadow: 0px 15px 20px -3px;
         width: 35%;
-        @media (max-width:767px) {
-          width:100px;
-          border-width:5px;
+        @media (max-width: 767px) {
+          width: 100px;
+          border-width: 5px;
         }
       }
-      .edit-photo{
+      // .uploadcare--widget__button {
+      //   opacity: 0;
+      //   width: 40px;
+      //   position: absolute;
+      //   overflow: hidden;
+      //   top: 0px;
+      //   left: -3px;
+      // }
+      .crop-img{
+        opacity: 0;
+        width: 40px;
+        position: absolute;
+        overflow: hidden;
+        top: 0px;
+        left: -3px;
+      }
+      .edit-photo {
         position: absolute;
         left: 32%;
         top: 70%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         width: 40px;
         height: 40px;
         background-color: #fff;
@@ -80,34 +96,35 @@
       }
     }
   }
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .row{
-      input,textarea{
+    .row {
+      input,
+      textarea {
         color: #fff;
         background-color: #000;
         border-radius: 10px;
         padding-left: 20px;
-        font-size: clamp(14px , 1vw, 16px);
+        font-size: clamp(14px, 1vw, 16px);
       }
-      textarea{
+      textarea {
         height: 100px;
         resize: none;
       }
-      label{
-        color:#fff;
+      label {
+        color: #fff;
         margin-left: 20px;
-        font-size: clamp(14px , 1vw, 16px);
+        font-size: clamp(14px, 1vw, 16px);
       }
     }
-    a{
+    a {
       margin: 50px 0 -50px 0;
       text-decoration: underline;
       font-size: 20px;
-      color:#000
+      color: #000;
     }
   }
 }
-@import "submitbtn"
+@import "submitbtn";
