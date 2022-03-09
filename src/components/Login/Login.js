@@ -31,6 +31,7 @@ export default class Login extends Component {
             <i className="fa fa-eye-slash" onClick={viewPass}></i>
           </div>
           <button className='btn'>Log in</button>
+          <a href='/forget-password' className='a-forget'>Forget password</a>
         </form>
       </div>
     )

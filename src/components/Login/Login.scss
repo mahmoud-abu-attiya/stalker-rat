@@ -65,5 +65,13 @@
         background-color: $primarycolor;
       }
     }
+    .a-forget{
+      text-align: center;
+      margin-top: 20px;
+      color: #033332;
+      text-decoration: underline;
+      font-size: clamp(16px , 2vw , 19px);
+      font-weight: bold;
+    }
   }
 }
