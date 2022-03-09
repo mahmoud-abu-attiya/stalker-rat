@@ -7,18 +7,29 @@ export default class SearchBox extends Component {
     person: [],
   };
 
-  componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
-      // console.log(res.data);
-      this.setState({ person: res.data })
-    })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // componentDidMount() {
+  //   axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+  //     // console.log(res.data);
+  //     this.setState({ person: res.data })
+  //   })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  //   }
   render() {
+    const search = () => {
+      let inp = document.getElementById("search");
+      // console.log(inp.value)
+      axios.get("https://stalker-rat-test.herokuapp.com/api/search?q=" + inp.value)
+        .then((res) => {
+          console.log(res)
+          this.setState({ person: res.data })
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
     const inpFoucs = () => {
-      // console.log(this.state.person);
       let inp = document.getElementById("search");
       let sugg = document.querySelector(".suggestions");
       let overlay = document.querySelector(".overlay");
@@ -78,6 +89,7 @@ export default class SearchBox extends Component {
             id="search"
             onFocus={inpFoucs}
             onBlur={inpBlur}
+            onInput={search}
           ></input>
           <label htmlFor="search" title="Search"></label>
         </div>
