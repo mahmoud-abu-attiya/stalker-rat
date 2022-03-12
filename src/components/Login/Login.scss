@@ -22,7 +22,10 @@
     @media (max-width: 767px) {
       width: 100%;
     }
-    :first-child{
+    // div{
+    //   margin-bottom: 15px;
+    // }
+    .title{
       font-size: clamp(25px, 2.5vw, 40px);
       margin-bottom: 20px;
     }
@@ -36,6 +39,7 @@
         border-radius: 15px;
         outline: none;
         color: white;
+        margin-bottom: 15px;
         font-size: 16px;
         transition: 0.3s;
         &:focus, &:active {
@@ -49,6 +53,23 @@
         top:39%;
         right: 8px;
         transform: translate(-50%, -50%);
+      }
+    }
+    .alert{
+      
+      color: #842029;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #dca7a7;
+      display: none;
+      align-items: center;
+      background-color: #ffadad80;
+      i{
+        margin-right: 10px;
+      }
+      div{
+        line-height: 1.2rem;
+        font-size: clamp(14px , 2vw , 16px);
       }
     }
     button{
