@@ -95,14 +95,23 @@ nav {
                 background-color: #11c3c126;
                 cursor: pointer;
               }
-              img {
+              .user-pic{
                 height: 90%;
                 border-radius: 50%;
+                overflow: hidden;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                img {
+                  width: 100%;
+                  aspect-ratio: 1/1;
+                  object-fit: cover;
+                }
               }
-              div {
-                font-size: 18px;
+              .user-name {
+                font-size: clamp(15px,2vw,18px);
                 margin-left: 15px;
                 font-weight: bolder;
+                white-space: nowrap;
               }
             }
           }
@@ -112,7 +121,8 @@ nav {
       /////// suggestion animation//////
       .open-sugg {
         opacity: 1;
-        height: 50vh;
+        height: 52vh;
+        max-height: 440px;
       }
       /////// suggestion animation//////
 
@@ -208,4 +218,4 @@ nav {
   }
 }
 
-@import "searchInput";
+@import "./searchInput/searchInput";

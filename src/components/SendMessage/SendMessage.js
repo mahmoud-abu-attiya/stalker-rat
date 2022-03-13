@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import profile from "../../images/profile.jpg";
+import profile from "../../images/profile.svg";
 import "./SendMessage.scss";
 
 export default class SendMessage extends Component {

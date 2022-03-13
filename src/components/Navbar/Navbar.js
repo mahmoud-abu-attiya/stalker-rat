@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./Navbar.scss";
 import logo from "../../images/logo.png";
 import "font-awesome/css/font-awesome.min.css";
-import imageProfile from "../../images/profile.jpg";
-import SearchBox from "./SearchBox";
+import imageProfile from "../../images/profile.svg";
+import SearchBox from "./searchInput/SearchBox";
 
 export default class Navbar extends Component {
   render() {

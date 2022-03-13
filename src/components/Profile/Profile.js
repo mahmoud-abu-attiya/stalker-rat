@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProfileImg from "../../images/profile.jpg";
+import ProfileImg from "../../images/profile.svg";
 import "./Profile.scss";
 import ShareImg from "../../images/share.gif";
 import Share from "./Share/Share";
@@ -92,9 +92,9 @@ export default class Profile extends Component {
               <h2>Mahmoud Abu-Attiya</h2>
             </div>
             <div className="share">
-              <p className="link">
+              {/* <p className="link">
                 https://lottiefiles.com/33940-like-comment-and-share
-              </p>
+              </p> */}
               <button onClick={shareIcons}>
                 <img src={ShareImg} alt="share link"></img>
               </button>
@@ -163,9 +163,9 @@ export default class Profile extends Component {
               <h1>send</h1>
               <div className="message">
                 <p className="message-content">
-                  <div className="send-to">
+                  <span className="send-to">
                     you send this message to Ahmed :
-                  </div>
+                  </span>
                   <br />
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Accusantium maxime iure tempora molestiae repellat molestias
