@@ -118,14 +118,17 @@
 .noresult{
   display: none;
   height: 100%;
+  width:100%;
   img{
-    height: 100%;
+    width: 70%;
     @media (max-width:767px) {
-      width: 80%;
-      height: auto;
+      width: 90%;
     }
-    div{
-      font-size: clamp(20px,2vw,25px);
-    }
+  }
+  div{
+    font-size: clamp(20px,2vw,25px);
+    font-weight: bold;
+    color:$primarycolor;
+    margin-top: 10%;
   }
 }

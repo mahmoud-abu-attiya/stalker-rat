@@ -1,65 +1,61 @@
 import axios from "axios";
 import React, { Component } from "react";
 import imageProfile from "../../../images/profile.svg";
-import noresultpic from "../../../images/noresult.png"
+import noresultpic from "../../../images/noresult.png";
 
 export default class SearchBox extends Component {
   state = {
     person: [],
   };
 
-
   render() {
-    const search = () => {
-      let plContainer = document.querySelector(".pl-container")
-      let nores = document.querySelector(".noresult");
-      plContainer.style.display = "block"
-      let searchResult = document.querySelectorAll(".search-result")
+    const change = () => {
+      let searchResult = document.querySelectorAll(".search-result");
       searchResult.forEach((result) => {
-        result.style.display = "none"
-        console.log(searchResult.length);
-      })
-
+        result.style.display = "none";
+      });
+    };
+    const search = () => {
+      let plContainer = document.querySelector(".pl-container");
       let inp = document.getElementById("search");
       let tops = document.querySelector(".top3");
-      axios.get("https://stalker-rat-test.herokuapp.com/api/search?q=" + inp.value)
+      let nores = document.querySelector(".noresult");
+      nores.style.display = "none";
+      plContainer.style.display = "block";
+
+      axios
+        .get("https://stalker-rat-test.herokuapp.com/api/search?q=" + inp.value)
         .then((res) => {
-          this.setState({ person: res.data })
+          this.setState({ person: res.data });
           if (res.data.length !== 0) {
-            plContainer.style.display = "none"
-            setTimeout(() => {
-              nores.style.display = "none"
-              
-            }, 500);
+            plContainer.style.display = "none";
           } else {
-            // console.log("no result");
-            setTimeout(() => {
-              
-              nores.style.display = "block"
-            }, 500);
-            plContainer.style.display = "none"
+            plContainer.style.display = "none";
+            nores.style.display = "block";
           }
-          tops.style.display = "none"
+          tops.style.display = "none";
           if (inp.value === "") {
-            tops.style.display = ""
-            let searchResult = document.querySelectorAll(".top3 .search-result")
+            tops.style.display = "";
+            nores.style.display = "none";
+            let searchResult = document.querySelectorAll(
+              ".top3 .search-result"
+            );
             searchResult.forEach((result) => {
-              result.style.display = ""
-            })
+              result.style.display = "";
+            });
           }
         })
         .catch((err) => {
           console.log(err);
-        })
-
-    }
+        });
+    };
     const inpFoucs = () => {
       let inp = document.getElementById("search");
       let sugg = document.querySelector(".suggestions");
       let overlay = document.querySelector(".overlay");
       sugg.classList.add("open-sugg");
       overlay.style.display = "block";
-      inp.style.color = ""
+      inp.style.color = "";
       // if(inp.value === ""){
       //   tops.style.display = "block"
       // }else{
@@ -98,20 +94,20 @@ export default class SearchBox extends Component {
         btnsAndProfile.style.display = "";
         logo.style.display = "";
         navContainer.style.gridTemplateColumns = "";
-      }, 400)
+      }, 400);
       inp.style.width = "";
       inp.style.padding = "";
       navContainer.style.padding = "";
       if (window.innerWidth < 767) {
-        inp.style.color = "#000"
+        inp.style.color = "#000";
       }
     };
-    const aoil = ()=>{
-      let userPics = document.querySelectorAll(".user-pic")
-      userPics.forEach(pic => {
-        pic.classList.remove("skeleton")
+    const aoil = () => {
+      let userPics = document.querySelectorAll(".user-pic");
+      userPics.forEach((pic) => {
+        pic.classList.remove("skeleton");
       });
-    }
+    };
     return (
       <div className="search-form">
         <div className="field">
@@ -122,7 +118,8 @@ export default class SearchBox extends Component {
             id="search"
             onFocus={inpFoucs}
             onBlur={inpBlur}
-            onChange={search}
+            onChange={change}
+            onInput={search}
           ></input>
           <label htmlFor="search" title="Search"></label>
         </div>
@@ -185,7 +182,12 @@ export default class SearchBox extends Component {
                 <a href="/send-message" key={valu.id}>
                   <div className="search-result">
                     <div className="user-pic skeleton">
-                      <img className="" src={valu.image} alt="user pic" onLoad={aoil}></img>
+                      <img
+                        className=""
+                        src={valu.image}
+                        alt="user pic"
+                        onLoad={aoil}
+                      ></img>
                     </div>
                     <div className="user-name">{valu.name}</div>
                   </div>
