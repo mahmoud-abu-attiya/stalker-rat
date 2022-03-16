@@ -24,12 +24,12 @@ export default class App extends Component {
           <Routes>
             <Route path="/stalker-rat/" element={<LandingPage/>} />
             <Route path="/" element={<LandingPage/>} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/send-message' element={<SendMessage />} />
-            <Route path='/edit-profile' element={<EditProfile />} />
-            <Route path='/forget-password' element={<ForgetPass />} />
+            <Route path='/login/' element={<Login />} />
+            <Route path='/signup/' element={<SignUp />} />
+            <Route path='/profile/' element={<Profile />} />
+            <Route path='/user/:id' element={<SendMessage />} />
+            <Route path='/edit-profile/' element={<EditProfile />} />
+            <Route path='/forget-password/' element={<ForgetPass />} />
           </Routes>
           <Footer />
         </div>

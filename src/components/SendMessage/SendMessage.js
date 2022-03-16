@@ -1,8 +1,23 @@
+import axios from "axios";
 import React, { Component } from "react";
-import profile from "../../images/profile.svg";
+import { useParams } from "react-router-dom";
 import "./SendMessage.scss";
 
-export default class SendMessage extends Component {
+class SendMessageCom extends Component {
+  state = {
+    info: []
+  }
+  componentDidMount(){
+    const userID = this.props.usparams.id;
+    console.log(userID);
+    axios.get("https://stalker-rat-test.herokuapp.com/api/user/" + userID)
+    .then(res => {
+      // console.log(res.data);
+      this.setState({ info : res.data})
+    }).catch(err => {
+      console.log(err);
+    })
+  }
   render() {
     const sendAni = () => {
       let textarea = document.getElementById("send")
@@ -20,16 +35,17 @@ export default class SendMessage extends Component {
         }, 2000);
       }
     };
+    const aoil = () => {
+      let photoBox = document.querySelector(".photo")
+      photoBox.classList.remove("skeleton")
+    }
     return (
       <div className="send-message container">
-        <div className="photo">
-          <img src={profile} alt="profile"></img>
+        <div className="photo skeleton">
+          <img src={this.state.info.image} alt={this.state.info.name+" pictuer"} onLoad={aoil}></img>
         </div>
-        <h1>Mahmoud Abu-Attiya</h1>
-        <div className="bio">
-          this is biothis is biothisthis is biothis is biothisthis is biothis is
-          biothisthis is biothis is biothis is biothis is biothis is bio
-        </div>
+        <h1>{this.state.info.name}</h1>
+        <div className="bio">{this.state.info.bio}</div>
         <div>
           <div className="smc">
             <div className="ani"></div>
@@ -43,4 +59,9 @@ export default class SendMessage extends Component {
       </div>
     );
   }
+}
+export default function SendMessage(props) {
+  const usparams = useParams();
+
+  return <SendMessageCom {...props} usparams={usparams} />;
 }

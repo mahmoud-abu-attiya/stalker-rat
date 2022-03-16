@@ -185,7 +185,7 @@ export default class SearchBox extends Component {
             </div>
             {this.state.person.map((valu) => {
               return (
-                <a href="/send-message" key={valu.id}>
+                <a href={valu.url} key={valu.id}>
                   <div className="search-result">
                     <div className="user-pic skeleton">
                       <img
