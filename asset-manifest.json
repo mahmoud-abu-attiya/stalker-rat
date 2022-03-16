@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/stalker-rat/static/css/main.eba04e1a.css",
+    "main.js": "/stalker-rat/static/js/main.d502eff3.js",
+    "static/media/new-message.gif": "/stalker-rat/static/media/new-message.373e344c263b3cca0e97.gif",
+    "static/media/cover-bg.gif": "/stalker-rat/static/media/cover-bg.d9bf319b952ad1279d1f.gif",
+    "static/media/share.gif": "/stalker-rat/static/media/share.ffeb8ec07fe7b51a2783.gif",
+    "static/media/ani-send.gif": "/stalker-rat/static/media/ani-send.474edfdc1917dce83232.gif",
+    "static/media/Black-Paper.jpg": "/stalker-rat/static/media/Black-Paper.d82ce757c9f21c324887.jpg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/stalker-rat/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/body-bg.jpg": "/stalker-rat/static/media/body-bg.238297601af1daa577ba.jpg",
+    "static/media/fontawesome-webfont.eot": "/stalker-rat/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/stalker-rat/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/heart-loadign.gif": "/stalker-rat/static/media/heart-loadign.785244475113f4b546a5.gif",
+    "static/media/header-logo.png": "/stalker-rat/static/media/header-logo.a243b30c4193acfb69e0.png",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/stalker-rat/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/logo.png": "/stalker-rat/static/media/logo.18539c4ee520e36e29f6.png",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/stalker-rat/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/loading.gif": "/stalker-rat/static/media/loading.013afd396f73984bbc88.gif",
+    "static/media/noresult.png": "/stalker-rat/static/media/noresult.5a868643c05df5c2a90d.png",
+    "static/media/signup-v-2.svg": "/stalker-rat/static/media/signup-v-2.79f4e38131c3191a484e771ae795f843.svg",
+    "static/media/login.svg": "/stalker-rat/static/media/login.d7632251f1fa1dafb3c92f874e75afc7.svg",
+    "static/media/profile.svg": "/stalker-rat/static/media/profile.8656479cf955dde7f8b635655c662f56.svg",
+    "index.html": "/stalker-rat/index.html",
+    "static/media/arrow.svg": "/stalker-rat/static/media/arrow.73e5216021841387acb74ea6f41df8c8.svg",
+    "static/media/right.svg": "/stalker-rat/static/media/right.8eae648aef668862a0fcd5293d396ae7.svg",
+    "main.eba04e1a.css.map": "/stalker-rat/static/css/main.eba04e1a.css.map",
+    "main.d502eff3.js.map": "/stalker-rat/static/js/main.d502eff3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eba04e1a.css",
+    "static/js/main.d502eff3.js"
+  ]
+}
