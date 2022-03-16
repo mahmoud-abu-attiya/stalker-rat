@@ -278,7 +278,11 @@ export default class Form extends Component {
           console.log(res.data);
         });
     } else {
-      // not confirm
+      let alert = document.querySelector(".alert")
+			alert.style.display = "flex"
+			setTimeout(() => {
+				alert.style.display = ""
+			}, 7000);
     }
   };
 
@@ -432,6 +436,12 @@ export default class Form extends Component {
                 ></Eye>
               </InputWrapper>
             </InputContainer>
+              <div className="alert">
+                <i className="fa-solid fa-triangle-exclamation"></i>
+                <div>
+									Password confirmation doesn't match.
+                </div>
+              </div>
           </Step>
         </Steps>
         <Next back className="hidden animate" id="back">
