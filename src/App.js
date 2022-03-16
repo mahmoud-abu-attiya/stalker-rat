@@ -22,7 +22,7 @@ export default class App extends Component {
           <Overlay />
           <Navbar />
           <Routes>
-            <Route path="/stalker-rat" element={<LandingPage/>} />
+            <Route path="/stalker-rat/" element={<LandingPage/>} />
             <Route path="/" element={<LandingPage/>} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
