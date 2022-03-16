@@ -6,42 +6,48 @@ import noresultpic from "../../../images/noresult.png";
 export default class SearchBox extends Component {
   state = {
     person: [],
+    // request: false
   };
 
   render() {
-    const change = () => {
-      let searchResult = document.querySelectorAll(".search-result");
-      searchResult.forEach((result) => {
-        result.style.display = "none";
-      });
-    };
+    // const change = () => {
+      
+    // };
     const search = () => {
       let plContainer = document.querySelector(".pl-container");
       let inp = document.getElementById("search");
       let tops = document.querySelector(".top3");
       let nores = document.querySelector(".noresult");
+      let searchResult = document.querySelectorAll(".search-result");
       nores.style.display = "none";
       plContainer.style.display = "block";
+      tops.style.display = "none";
+      searchResult.forEach((result) => {
+        result.style.display = "none";
+      });
+      this.setState({ person: [] })
 
       axios
         .get("https://stalker-rat-test.herokuapp.com/api/search?q=" + inp.value)
         .then((res) => {
           this.setState({ person: res.data });
-          if (res.data.length !== 0) {
-            plContainer.style.display = "none";
-          } else {
-            plContainer.style.display = "none";
-            nores.style.display = "block";
-          }
-          tops.style.display = "none";
+          plContainer.style.display = "none";
+          // console.log(this.state.person);
+  
+            if (this.state.person.length === 0) {
+                nores.style.display = "block";
+            }else{
+              nores.style.display = "none"
+            }
+  
           if (inp.value === "") {
             tops.style.display = "";
             nores.style.display = "none";
-            let searchResult = document.querySelectorAll(
+            let searchResultT = document.querySelectorAll(
               ".top3 .search-result"
             );
-            searchResult.forEach((result) => {
-              result.style.display = "";
+            searchResultT.forEach((resultT) => {
+              resultT.style.display = "";
             });
           }
         })
@@ -118,7 +124,7 @@ export default class SearchBox extends Component {
             id="search"
             onFocus={inpFoucs}
             onBlur={inpBlur}
-            onChange={change}
+            // onChange={search}
             onInput={search}
           ></input>
           <label htmlFor="search" title="Search"></label>
