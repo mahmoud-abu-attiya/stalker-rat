@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import ProfileImg from "../../images/profile.svg";
 import "./Profile.scss";
 import ShareImg from "../../images/share.gif";
+import noMess from "../../images/und4.svg";
+import noNew from "../../images/und3.svg";
+import noFav from "../../images/und1.svg";
+import noSend from "../../images/und6.svg";
 import Share from "./Share/Share";
 import NewMess from "./NewMess/NewMess";
 import Message from "./Message/Message";
 import html2canvas from "html2canvas";
+import No from "./No";
 
 export default class Profile extends Component {
   shareScreenshot = (e) => {
@@ -38,9 +43,28 @@ export default class Profile extends Component {
       .catch((e) => {
         console.log(e);
       });
+    let mess = document.querySelector;
   };
   render() {
+    const visibleShareBtn = () => {
+      let act = document.querySelector(".parts .active");
+      let shareBtn = act.querySelector(".no-share");
+      if (act.classList.contains("massages-fav") || act.classList.contains("massages-send")) {
+          shareBtn.style.display = "none";
+        }
+    };
+    const visibleTopThree = () => {
+      let act = document.querySelector(".parts .active");
+      let topThree = act.querySelector(".sug-top3");
+      if (act.classList.contains("massages-send")) {
+          topThree.style.display = "flex";
+        }
+    }
     const allparts = () => {
+      setTimeout(() => {
+        visibleShareBtn()
+        visibleTopThree()
+      }, 100);
       document.querySelectorAll(".part").forEach((part) => {
         if (part.classList.contains("active")) {
           part.classList.remove("active");
@@ -92,9 +116,6 @@ export default class Profile extends Component {
               <h2>Mahmoud Abu-Attiya</h2>
             </div>
             <div className="share">
-              {/* <p className="link">
-                https://lottiefiles.com/33940-like-comment-and-share
-              </p> */}
               <button onClick={shareIcons}>
                 <img src={ShareImg} alt="share link"></img>
               </button>
@@ -126,16 +147,37 @@ export default class Profile extends Component {
           </ul>
           <div className="parts">
             <section className="massages part active">
-              <h1>massages</h1>
-              <Message ShareFunction={this.shareScreenshot} />
+              <h1>Massages</h1>
+              <No
+                clickShare={shareIcons}
+                pic={noMess}
+                title="You do not have messages yet."
+                topThree="notshow"
+                share="show"
+              />
+              {/* <Message ShareFunction={this.shareScreenshot} /> */}
             </section>
             <section className="massages-new part">
-              <h1>new</h1>
-              <NewMess ShareFunction={this.shareScreenshot} />
+              <h1>New</h1>
+              <No
+                clickShare={shareIcons}
+                pic={noNew}
+                title="You do not have new messages yet."
+                topThree="notshow"
+                share="show"
+              />
+              {/* <NewMess ShareFunction={this.shareScreenshot} /> */}
             </section>
             <section className="massages-fav part">
               <h1>Favorite</h1>
-              <div className="message">
+              <No
+                clickShare={shareIcons}
+                pic={noFav}
+                title="You do not add favorite messages."
+                topThree="notshow"
+                share="notshow"
+              />
+              {/* <div className="message">
                 <p className="message-content">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Accusantium maxime iure tempora molestiae repellat molestias
@@ -157,11 +199,18 @@ export default class Profile extends Component {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </section>
             <section className="massages-send part">
-              <h1>send</h1>
-              <div className="message">
+              <h1>Send</h1>
+              <No
+                clickShare={shareIcons}
+                pic={noSend}
+                title="You do not send any messages."
+                topThree="show"
+                share="notshow"
+              />
+              {/* <div className="message">
                 <p className="message-content">
                   <span className="send-to">
                     you send this message to Ahmed :
@@ -178,7 +227,7 @@ export default class Profile extends Component {
                     <span>S</span>talker <span>R</span>at
                   </div>
                 </div>
-              </div>
+              </div> */}
             </section>
           </div>
         </div>

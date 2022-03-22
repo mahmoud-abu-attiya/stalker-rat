@@ -1,18 +1,26 @@
 import axios from "axios";
 import React, { Component } from "react";
-import imageProfile from "../../../images/profile.svg";
+// import imageProfile from "../../../images/profile.svg";
 import noresultpic from "../../../images/noresult.png";
+
 
 export default class SearchBox extends Component {
   state = {
     person: [],
-    // request: false
+    top_three: [],
   };
-
+  componentDidMount() {
+    axios
+      .get("https://stalker-rat-test.herokuapp.com/api/top-three/")
+      .then((res) => {
+        console.log(res.data);
+        this.setState({ top_three: res.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   render() {
-    // const change = () => {
-      
-    // };
     const search = () => {
       let plContainer = document.querySelector(".pl-container");
       let inp = document.getElementById("search");
@@ -25,7 +33,7 @@ export default class SearchBox extends Component {
       searchResult.forEach((result) => {
         result.style.display = "none";
       });
-      this.setState({ person: [] })
+      this.setState({ person: [] });
 
       axios
         .get("https://stalker-rat-test.herokuapp.com/api/search?q=" + inp.value)
@@ -33,13 +41,13 @@ export default class SearchBox extends Component {
           this.setState({ person: res.data });
           plContainer.style.display = "none";
           // console.log(this.state.person);
-  
-            if (this.state.person.length === 0) {
-                nores.style.display = "block";
-            }else{
-              nores.style.display = "none"
-            }
-  
+
+          if (this.state.person.length === 0) {
+            nores.style.display = "block";
+          } else {
+            nores.style.display = "none";
+          }
+
           if (inp.value === "") {
             tops.style.display = "";
             nores.style.display = "none";
@@ -154,30 +162,18 @@ export default class SearchBox extends Component {
               </div>
             </div>
             <div className="top3">
-              <a href="/send-message">
-                <div className="search-result">
-                  <div className="user-pic">
-                    <img src={imageProfile} alt="user pic"></img>
-                  </div>
-                  <div className="user-name">Mahmoud abu attiya</div>
-                </div>
-              </a>
-              <a href="/send-message">
-                <div className="search-result">
-                  <div className="user-pic">
-                    <img src={imageProfile} alt="user pic"></img>
-                  </div>
-                  <div className="user-name">Ahmed yasser</div>
-                </div>
-              </a>
-              <a href="/send-message">
-                <div className="search-result">
-                  <div className="user-pic">
-                    <img src={imageProfile} alt="user pic"></img>
-                  </div>
-                  <div className="user-name">Salem abu attiya</div>
-                </div>
-              </a>
+              {this.state.top_three.map((info) => {
+                return (
+                  <a href={info.url} key={info.id}>
+                    <div className="search-result">
+                      <div className="user-pic">
+                        <img src={info.image} alt={info.name}></img>
+                      </div>
+                      <div className="user-name">{info.name}</div>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
             <div className="noresult">
               <img src={noresultpic} alt="no result"></img>

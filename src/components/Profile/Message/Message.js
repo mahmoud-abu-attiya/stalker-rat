@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
 export default class Message extends Component {
-
-  shareFunction = (e)=>{
-    this.props.ShareFunction(e)
-  }
+  shareFunction = (e) => {
+    this.props.ShareFunction(e);
+  };
   render() {
     return (
       <div className="message">

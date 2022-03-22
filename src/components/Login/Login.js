@@ -5,7 +5,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 class Loginclass extends Component {
+  
   render() {
+    function setCookie(cname, cvalue) {
+      document.cookie = cname + "=" + cvalue + ";path=/";
+    }
     const { navigation } = this.props;
     console.log(navigation);
     const viewPass = (e) => {
@@ -30,11 +34,11 @@ class Loginclass extends Component {
           password: passwordinp.value,
         })
         .then((res) => {
-          // console.log(res.data.token);
+          console.log(res.data.token);
+          setCookie("token", res.data.token)
           navigation("/profile");
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
           let errAlert = document.querySelector(".alert");
           errAlert.style.display = "flex";
           setTimeout(() => {
@@ -87,6 +91,5 @@ class Loginclass extends Component {
 
 export default function Login(props) {
   const navigation = useNavigate();
-
   return <Loginclass {...props} navigation={navigation} />;
 }

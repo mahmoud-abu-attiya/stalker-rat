@@ -1,5 +1,5 @@
 @import "../../styles/varibales";
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap");
 .profile {
   .cover {
     position: relative;
@@ -10,7 +10,7 @@
     border-bottom: 10px solid #000;
     box-shadow: 0px 10px 30px 5px;
     margin-bottom: 100px;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       height: 150px;
       margin-bottom: 50px;
     }
@@ -20,9 +20,9 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      @media (max-width:767px) {
-        gap:10px;
-        top:50%;
+      @media (max-width: 767px) {
+        gap: 10px;
+        top: 50%;
       }
       .profile-image {
         border: 10px solid #000;
@@ -30,9 +30,9 @@
         border-radius: 50%;
         box-shadow: 0px 15px 20px -3px;
         width: 35%;
-        @media (max-width:767px) {
-          width:100px;
-          border-width:5px;
+        @media (max-width: 767px) {
+          width: 100px;
+          border-width: 5px;
         }
       }
       h2 {
@@ -46,7 +46,7 @@
       position: absolute;
       top: 20%;
       right: 3%;
-      @media (max-width:767px) {
+      @media (max-width: 767px) {
         top: 3%;
       }
       .link {
@@ -58,7 +58,7 @@
         background-color: transparent;
         img {
           width: 200px;
-          @media (max-width:767px) {
+          @media (max-width: 767px) {
             width: 100px;
           }
         }
@@ -73,7 +73,7 @@
       border-bottom: 2px solid;
       background-color: #000;
       border-radius: 10px;
-      font-size: clamp(12px , 2vw, 16px);
+      font-size: clamp(12px, 2vw, 16px);
       :not(:last-child) {
         border-right: 2px solid #ccc;
       }
@@ -101,6 +101,66 @@
         padding: 20px;
         opacity: 0;
         height: 200px;
+        .no {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img {
+            width: 50%;
+            // margin:-170px;
+          }
+          p {
+            font-size: clamp(20px, 2vw, 40px);
+            font-weight: bold;
+          }
+          button {
+            padding: 10px 50px;
+            border-radius: 10px;
+            outline: none;
+            color: $primarycolor;
+            border: 2px solid $primarycolor;
+            background-color: #000;
+            i {
+              margin-left: 20px;
+              font-size: 20px;
+            }
+            // width: 50%;
+          }
+          .pltop{
+            display: flex;
+            justify-content: space-around;
+            &__cont{
+              width: 30%;
+              aspect-ratio: 1/1;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+          .sug-top3 {
+            width: 100%;
+            display: none;
+            justify-content: space-around;
+            margin-top: 20px;
+            .sug {
+              text-align: center;
+              .img-cont {
+                border-radius: 50%;
+                border: 5px solid #000;
+                overflow: hidden;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                // width: 100%;
+                img {
+                  width: 100%;
+                }
+              }
+              p {
+                color: #000;
+                font-size: clamp(12px, 2vw, 16px);
+              }
+            }
+          }
+        }
       }
       .active {
         opacity: 1;
@@ -119,8 +179,8 @@
         justify-content: space-between;
         margin-bottom: 50px;
         .message-content {
-          font-family: 'Baloo Bhaijaan 2', cursive;
-          .send-to{
+          font-family: "Baloo Bhaijaan 2", cursive;
+          .send-to {
             margin-bottom: 20px;
           }
         }
@@ -130,30 +190,30 @@
           align-items: center;
           border-top: 1px solid;
           padding-top: 20px;
-          .mes-date{
-            color:#ddd;
+          .mes-date {
+            color: #ddd;
             font-size: 10px;
           }
-          .logo{
-            color:#fff;
-            span{
-              color:$primarycolor;
+          .logo {
+            color: #fff;
+            span {
+              color: $primarycolor;
             }
           }
-          .shr-fav{
-            :first-child{
+          .shr-fav {
+            :first-child {
               margin-left: 20px;
             }
-            button{
+            button {
               font-size: clamp(20px, 2.5vw, 30px);
               background-color: transparent;
-              border:none;
+              border: none;
               outline: none;
-              color:$primarycolor;
-              .fa-star{
-                color:goldenrod
+              color: $primarycolor;
+              .fa-star {
+                color: goldenrod;
               }
-              .far{
+              .far {
                 display: none;
               }
             }
