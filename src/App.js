@@ -12,6 +12,7 @@ import Profile from './components/Profile/Profile';
 import SendMessage from './components/SendMessage/SendMessage';
 import EditProfile from './components/EditProfile/EditProfile';
 import ForgetPass from './components/ForgetPass/ForgetPass';
+import About from './components/About/About';
 
 export default class App extends Component {
   render() {
@@ -30,6 +31,7 @@ export default class App extends Component {
             <Route path='/user/:id' element={<SendMessage />} />
             <Route path='/edit-profile/' element={<EditProfile />} />
             <Route path='/forget-password/' element={<ForgetPass />} />
+            <Route path='/about/' element={<About />} />
           </Routes>
           <Footer />
         </div>

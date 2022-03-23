@@ -1,0 +1,109 @@
+@import "../../styles/varibales";
+.lo-ab {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width:767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo-container {
+    width: 30%;
+    img {
+      width: 100%;
+    }
+    @media (max-width:767px) {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+  .about {
+    width: 68%;
+    &__header {
+      font-size: clamp(25px, 3vw, 35px);
+      span {
+        color: $primarycolor;
+      }
+    }
+    &__info {
+      p {
+        font-weight: 600;
+        font-size: clamp(13px, 2vw, 17px);
+        @media (max-width: 767px) {
+          line-height: 1rem;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
+.paragrafs {
+  p {
+    font-weight: 600;
+    font-size: clamp(14px, 2vw, 17px);
+    @media (max-width: 767px) {
+      line-height: 1rem;
+    }
+  }
+}
+.developers-section {
+  // margin-top: 70px;
+  max-width: 800px;
+  margin: 60px auto;
+  h2 {
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    font-size: clamp(25px, 2vw, 30px);
+    font-weight: bold;
+  }
+  .developer {
+    display: flex;
+    justify-content: space-between;
+    
+    &__card {
+      width: 49%;
+      background-color: #000;
+      color: $primarycolor;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      // position: relative;
+      // height: fit-content;
+      &__image {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
+        border: 10px solid $primarycolor;
+        img {
+          width: 100%;
+        }
+      }
+      &__info {
+        padding: 20px;
+        &__name {
+          font-weight: bold;
+          font-size: clamp(13px, 2vw, 25px);
+        }
+        &__title {
+          font-size: clamp(12px, 1.5vw, 16px);
+        }
+        &__links {
+          max-width: 200px;
+          margin:10px auto 0 auto;
+          font-size: 30px;
+          display: flex;
+          justify-content: space-between;
+          a{
+            cursor: pointer;
+            color: $primarycolor;
+          }
+        }
+      }
+    }
+  }
+}
