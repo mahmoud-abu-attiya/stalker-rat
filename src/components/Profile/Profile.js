@@ -7,8 +7,8 @@ import noNew from "../../images/und3.svg";
 import noFav from "../../images/und1.svg";
 import noSend from "../../images/und6.svg";
 import Share from "./Share/Share";
-import NewMess from "./NewMess/NewMess";
-import Message from "./Message/Message";
+// import NewMess from "./NewMess/NewMess";
+// import Message from "./Message/Message";
 import html2canvas from "html2canvas";
 import No from "./No";
 
