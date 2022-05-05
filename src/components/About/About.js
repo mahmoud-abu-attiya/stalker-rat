@@ -61,10 +61,10 @@ export default class About extends Component {
                     <i className="fab fa-linkedin"></i>
                   </a>
                   <a href="https://github.com/mahmoud-abu-attiya" target="_blank" rel="noreferrer">
-                    <i class="fab fa-github-square"></i>
+                    <i className="fab fa-github-square"></i>
                   </a>
                   <a href="tel:+201020384108" target="_blank" rel="noreferrer">
-                    <i class="fas fa-phone"></i>
+                    <i className="fas fa-phone"></i>
                   </a>
                 </div>
               </div>
@@ -81,10 +81,10 @@ export default class About extends Component {
                     <i className="fab fa-linkedin"></i>
                   </a>
                   <a href="https://github.com/ahmedyasserays" target="_blank" rel="noreferrer">
-                    <i class="fab fa-github-square"></i>
+                    <i className="fab fa-github-square"></i>
                   </a>
                   <a href="tel:+201091361746" target="_blank" rel="noreferrer">
-                    <i class="fas fa-phone"></i>
+                    <i className="fas fa-phone"></i>
                   </a>
                 </div>
               </div>

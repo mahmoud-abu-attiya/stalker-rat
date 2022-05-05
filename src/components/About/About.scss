@@ -1,6 +1,6 @@
 @import "../../styles/varibales";
 .lo-ab {
-  margin-top: 30px;
+  margin: 30px 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -62,23 +62,27 @@
   }
   .developer {
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: center;
+    gap: 10%;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+    }
     &__card {
-      width: 49%;
+      width: 40%;
+      max-width: 400px;
       background-color: #000;
       color: $primarycolor;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      // position: relative;
-      // height: fit-content;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 4px solid #000;
+      @media (max-width: 767px) {
+        width: 90%;
+        margin: auto;
+      }
       &__image {
-        border-radius: 50%;
-        overflow: hidden;
         width: 100%;
-        border: 10px solid $primarycolor;
         img {
           width: 100%;
         }
@@ -87,10 +91,10 @@
         padding: 20px;
         &__name {
           font-weight: bold;
-          font-size: clamp(13px, 2vw, 25px);
+          font-size: clamp(16px, 2vw, 25px);
         }
         &__title {
-          font-size: clamp(12px, 1.5vw, 16px);
+          font-size: clamp(15px, 1.5vw, 16px);
         }
         &__links {
           max-width: 200px;

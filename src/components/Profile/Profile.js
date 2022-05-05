@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import ProfileImg from "../../images/profile.svg";
 import "./Profile.scss";
 import ShareImg from "../../images/share.gif";
-import noMess from "../../images/und4.svg";
-import noNew from "../../images/und3.svg";
-import noFav from "../../images/und1.svg";
-import noSend from "../../images/und6.svg";
+// import noMess from "../../images/und4.svg";
+// import noNew from "../../images/und3.svg";
+// import noFav from "../../images/und1.svg";
+// import noSend from "../../images/und6.svg";
 import Share from "./Share/Share";
-// import NewMess from "./NewMess/NewMess";
-// import Message from "./Message/Message";
+import NewMess from "./NewMess/NewMess";
+import Message from "./Message/Message";
 import html2canvas from "html2canvas";
-import No from "./No";
+// import No from "./No";
 
 export default class Profile extends Component {
   shareScreenshot = (e) => {
@@ -43,7 +43,7 @@ export default class Profile extends Component {
       .catch((e) => {
         console.log(e);
       });
-    let mess = document.querySelector;
+    // let mess = document.querySelector;
   };
   render() {
     const visibleShareBtn = () => {
@@ -148,36 +148,36 @@ export default class Profile extends Component {
           <div className="parts">
             <section className="massages part active">
               <h1>Massages</h1>
-              <No
+              {/* <No
                 clickShare={shareIcons}
                 pic={noMess}
                 title="You do not have messages yet."
                 topThree="notshow"
                 share="show"
-              />
-              {/* <Message ShareFunction={this.shareScreenshot} /> */}
+              /> */}
+              <Message ShareFunction={this.shareScreenshot} />
             </section>
             <section className="massages-new part">
               <h1>New</h1>
-              <No
+              {/* <No
                 clickShare={shareIcons}
                 pic={noNew}
                 title="You do not have new messages yet."
                 topThree="notshow"
                 share="show"
-              />
-              {/* <NewMess ShareFunction={this.shareScreenshot} /> */}
+              /> */}
+              <NewMess ShareFunction={this.shareScreenshot} />
             </section>
             <section className="massages-fav part">
               <h1>Favorite</h1>
-              <No
+              {/* <No
                 clickShare={shareIcons}
                 pic={noFav}
                 title="You do not add favorite messages."
                 topThree="notshow"
                 share="notshow"
-              />
-              {/* <div className="message">
+              /> */}
+              <div className="message">
                 <p className="message-content">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Accusantium maxime iure tempora molestiae repellat molestias
@@ -199,18 +199,18 @@ export default class Profile extends Component {
                     </button>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </section>
             <section className="massages-send part">
               <h1>Send</h1>
-              <No
+              {/* <No
                 clickShare={shareIcons}
                 pic={noSend}
                 title="You do not send any messages."
                 topThree="show"
                 share="notshow"
-              />
-              {/* <div className="message">
+              /> */}
+              <div className="message">
                 <p className="message-content">
                   <span className="send-to">
                     you send this message to Ahmed :
@@ -227,7 +227,7 @@ export default class Profile extends Component {
                     <span>S</span>talker <span>R</span>at
                   </div>
                 </div>
-              </div> */}
+              </div>
             </section>
           </div>
         </div>
